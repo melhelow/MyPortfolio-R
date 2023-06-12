@@ -16,19 +16,3 @@ code {
     monospace;
 }
 
-.header-left {
-  
-  flex-direction: row;
-  flex-wrap: nowrap;
-  float: left;
-  justify-content: flex-start;
- 
-}
-.header-right{
-  flex: 1 1 auto;
-  
- 
-  flex-wrap: nowrap;
-  float: right;
-  justify-content: flex-end;
-}

@@ -3,12 +3,15 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import myImage from "../images/profile.svg"
+import proj1Image from "../images/plant-pedia-logo.png"
+
 
 const navigation = [
   { name: 'About', href: '#'},
   { name: 'Work', href: '#'},
-  { name: 'Contact', href: '#' },
   { name: 'Resume', href: '#' },
+  { name: 'Skills', href: '#' },
+  { name: 'Contacts', href: '#' },
 ]
 
 function classNames(...classes) {
@@ -17,10 +20,10 @@ function classNames(...classes) {
 
 export default function Example(props) {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-800 ">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
             <div className="relative flex h-32 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -37,12 +40,12 @@ export default function Example(props) {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src={myImage}
+                    src={proj1Image}
                     alt="Your Company"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src={myImage}
+                    src={proj1Image}
                     alt="Your Company"
                   />
                 </div>
@@ -83,7 +86,7 @@ export default function Example(props) {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src={myImage}
+                        src={proj1Image}
                         alt=""
                       />
                     </Menu.Button>
