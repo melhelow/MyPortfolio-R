@@ -9,9 +9,11 @@ import proj1Image from "../images/plant-pedia-logo.png"
 const navigation = [
   { name: 'About', href: '#'},
   { name: 'Work', href: '#'},
-  { name: 'Resume', href: '#' },
-  { name: 'Skills', href: '#' },
   { name: 'Contacts', href: '#' },
+  { name: 'Resume', href: '#' },
+  
+
+
 ]
 
 function classNames(...classes) {
@@ -37,7 +39,7 @@ export default function Example(props) {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+                {/* <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-8 w-auto lg:hidden"
                     src={proj1Image}
@@ -48,7 +50,7 @@ export default function Example(props) {
                     src={proj1Image}
                     alt="Your Company"
                   />
-                </div>
+                </div> */}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
@@ -81,7 +83,7 @@ export default function Example(props) {
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
-                  <div>
+                  {/* <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open user menu</span>
                       <img
@@ -90,7 +92,7 @@ export default function Example(props) {
                         alt=""
                       />
                     </Menu.Button>
-                  </div>
+                  </div> */}
                   <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"
