@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Contact = () => {
+function Skills(props) {
     return (
         <div>
             
         </div>
     );
-};
+}
 
-export default Contact;
+export default Skills;
