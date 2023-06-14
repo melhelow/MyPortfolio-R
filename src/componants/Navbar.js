@@ -2,14 +2,13 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
-import myImage from "../images/profile.svg"
-import proj1Image from "../images/plant-pedia-logo.png"
+
 
 
 const navigation = [
   { name: 'About', href: '#'},
   { name: 'Work', href: '#'},
-  { name: 'Contacts', href: '#' },
+  { name: 'Contact', href: '#' },
   { name: 'Resume', href: '#' },
   
 
@@ -22,10 +21,10 @@ function classNames(...classes) {
 
 export default function Example(props) {
   return (
-    <Disclosure as="nav" className="bg-gray-800 ">
+    <Disclosure as="nav" className="bg-cyan-600 ">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  ">
             <div className="relative flex h-32 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -51,14 +50,14 @@ export default function Example(props) {
                     alt="Your Company"
                   />
                 </div> */}
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
+                <div className="hidden sm:ml-6 sm:block  ">
+                  <div className="flex space-x-4 ">
                     {navigation.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                            props.currentPage == item.name ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            props.currentPage == item.name ? 'bg-lime-300 bg-blue-400' : 'bg-blue-400 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={props.currentPage == item.name ? 'page' : undefined}
