@@ -13,7 +13,7 @@ function Resume() {
                    
                                         
                                            
-                                            <iframe src= {myResume} width="120%" height="600"/>
+                 <iframe src= {myResume} width="120%" height="600"/>
                                             
                                      
 
