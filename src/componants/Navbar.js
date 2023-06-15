@@ -22,16 +22,16 @@ function classNames(...classes) {
 
 export default function Example(props) {
   return (
-    <Disclosure as="nav" className="bg-cyan-600 ">
+    <Disclosure as="nav" className="bg-cyan-600  ">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  ">
             <div className="relative flex h-32 items-center justify-between">
               
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center ">
   
                 <div className="sm:ml-6 sm:block  ">
-                  <div className="flex space-x-4 ">
+                  <div className="flex space-x-20 ">
                     {navigation.map((item) => (
                       <a
                         key={item.name}

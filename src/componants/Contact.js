@@ -28,7 +28,7 @@ function Contact() {
 
   return (
     <div className="container flex ">
-      <div className="m-5  border-r-2 border-black p-5   ">
+      <div className="m-5  border-r-2 border-black p-5 px-20  ">
         <h1>Contacts</h1>
       </div>
       <Form />

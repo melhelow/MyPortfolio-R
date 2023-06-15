@@ -20,22 +20,22 @@ function Work() {
 
     return (
         <div className="container flex    ">
-            <div className="m-5  border-r-2 border-black p-5   ">
+            <div className="m-5  border-r-2 border-black p-5  px-20  ">
                 <h1>Work</h1>
             </div>
           
-            <div className="m-5 ">
+            <div className="m-5 px-20  ">
                 
                {
                 myProjects.map(project => {
                     return (
-                        <div className='flex flex-row'>
+                        <div className='flex flex-row items-stretch'>
                             <div className='flex flex-col  '>
                         <h1>{project.title}</h1>
                         
                         <a href ={project.url} target = "_blank">
                         <div
-                        className=' flex flex-row h-96 w-96 m-5  bg-cover bg-center shadow-2xl shadow-emerald-950   '
+                        className=' flex flex-row h-60 w-60 m-5  bg-cover bg-center shadow-2xl shadow-emerald-950   '
                         
                             style={{
                                 backgroundImage: `url(${project.image}) `,
