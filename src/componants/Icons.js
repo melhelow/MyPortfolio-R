@@ -28,7 +28,7 @@ function Icons() {
 
     return (
         <div>
-             <div className='flex flex-1 min-h-0 items-center justify-center sm:items-stretch sm:justify-center border-solid border-2 border-indigo-600 '>
+             <div className='flex flex-1 min-h-0 items-center justify-center sm:items-stretch sm:justify-center  border-indigo-600 '>
                 {myIcons.map((icons) => {
                     return (
                         <div className="flex flex-row ">
