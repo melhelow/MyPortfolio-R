@@ -13,7 +13,7 @@ function Work() {
             title: "Kidding Kittys",
             image: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64936663/1/?bust=1686450238&width=300",
             discreption: "Kidding Kittys is a web application that allows users to search for cats and get information about them. The user can also save cats to their favorites list and view them later. The user can also view the weather in their area and get a list of cats that are best suited for the current weather conditions.",
-            url: "https://kidding-kittys.herokuapp.com/"
+            url: "https://chi-town-coders.github.io/kidding-kitties/"
         },
 
     ]
@@ -46,7 +46,7 @@ function Work() {
                                 </div>
                                 </a>
                         </div>
-                                <div className='m-5 flex items-center '>
+                                <div className='m-5 flex items-center  '>
                             
                             <p>{project.discreption}</p>
                             </div>
