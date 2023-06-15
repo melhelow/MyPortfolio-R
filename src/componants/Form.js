@@ -19,7 +19,7 @@ function Form() {
     e.preventDefault();
 
     // Alert the user their first and last name, clear the inputs
-    alert(`Hello ${name} ${email}`);
+    alert(`${name} ${email}`);
     setName('');
     setEmail('');
   };
@@ -27,11 +27,11 @@ function Form() {
   return (
     <div>
       <p>
-        Hello {name} {email}
+        {name} {email}
       </p>
-      <form className="form">
+      <form className="form flex flex-col grid justify-items-stretch items-end ">
         <input 
-        className=' border-2 border-solid border-black'
+        className=' border-2 border-solid border-black  '
           value={name}
           name="name"
           onChange={handleInputChange}
