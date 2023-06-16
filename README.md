@@ -13,18 +13,13 @@ in this 20th assignment  i started my own code
 
 ## used technologies
 
--REACT, Tailwind
+- REACT, Tailwind
 
 
-![Getting Started](./assets/1.png)
-![Getting Started](./assets/2.png)
-![Getting Started](./assets/3.png)
-![Getting Started](./assets/4.png)
-![Getting Started](./assets/5.png)
-![Getting Started](./assets/6.png)
-
-
-
+![Getting Started](./src/images/react%201.png)
+![Getting Started](./src/images/react%202.png)
+![Getting Started](./src/images/react%203.png)
+![Getting Started](./src/images/react%204.png)
 
 ## github 
 https://github.com/melhelow/MyPortofoilio-R
