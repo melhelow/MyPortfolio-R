@@ -16,7 +16,7 @@ function Icons() {
           {
             // title: "email",
             icon: "fa-solid fa-at",
-            email: "melhelow@hotmail.com"
+            url: "mailto:melhelow@hotmail.com"
           },
           {
             // title: "phone",
