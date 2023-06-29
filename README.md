@@ -13,7 +13,7 @@ in this 20th assignment  i started my own code
 
 ## used technologies
 
-- REACT, Tailwind
+- REACT-Tailwind
 
 
 ![Getting Started](./src/images/react%201.png)
