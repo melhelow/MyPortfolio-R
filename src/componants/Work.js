@@ -4,6 +4,12 @@ function Work() {
 
     const myProjects = [
         {
+            title: "CalPal",
+            image: "https://github.com/Bit-Bandits/client/raw/main/src/assets/logo.png",
+            discreption: "CalPal is a calorie counting web application that allows a user to search for foods via the Edamam API and save the calories of their logged foods to their account,Users can see their logged calories for the week rendered as individual days listed in an easy to digest bar graph in their dashboard. The idea is simple, fast, and easy.",
+            url: "https://calpal-app.herokuapp.com/"
+        },
+        {
             title: "Plant Pedia",
             image: "https://avatars.githubusercontent.com/u/132026629?s=200&v=4",
             discreption: "Plant Pedia is a web application that allows users to search for plants and get information about them. The user can also save plants to their favorites list and view them later. The user can also view the weather in their area and get a list of plants that are best suited for the current weather conditions.",
@@ -38,7 +44,8 @@ function Work() {
             image: "https://github.com/melhelow/weather-dashboard/raw/main/develop/deployed-weather%20dashboard.png",
             discreption: "Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.",
             url: "https://melhelow.github.io/weather-dashboard/"
-        },
+        }
+
 
     ]
 
