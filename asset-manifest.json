@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/MyPortofoilio-R/static/css/main.dd01a716.css",
-    "main.js": "/MyPortofoilio-R/static/js/main.af89a1fa.js",
+    "main.js": "/MyPortofoilio-R/static/js/main.7a90134a.js",
     "static/js/787.0d6c177f.chunk.js": "/MyPortofoilio-R/static/js/787.0d6c177f.chunk.js",
     "static/media/resume-software-engineer.pdf": "/MyPortofoilio-R/static/media/resume-software-engineer.53e443846db5c7a9836d.pdf",
     "static/media/me 3.jpg": "/MyPortofoilio-R/static/media/me 3.ce8cc5fdc1383d7027e4.jpg",
     "index.html": "/MyPortofoilio-R/index.html",
     "main.dd01a716.css.map": "/MyPortofoilio-R/static/css/main.dd01a716.css.map",
-    "main.af89a1fa.js.map": "/MyPortofoilio-R/static/js/main.af89a1fa.js.map",
+    "main.7a90134a.js.map": "/MyPortofoilio-R/static/js/main.7a90134a.js.map",
     "787.0d6c177f.chunk.js.map": "/MyPortofoilio-R/static/js/787.0d6c177f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dd01a716.css",
-    "static/js/main.af89a1fa.js"
+    "static/js/main.7a90134a.js"
   ]
 }
