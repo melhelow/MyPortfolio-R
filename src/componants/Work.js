@@ -65,7 +65,7 @@ function Work() {
 
     return (
         <div className="container flex    ">
-            <div className="m-5  border-r-2 border-black p-5  px-20  ">
+            <div className="m-1  border-r-2 border-black p-1  px-20  ">
                 <h1>Work</h1>
             </div>
           
@@ -74,13 +74,13 @@ function Work() {
                {
                 myProjects.map(project => {
                     return (
-                        <div className='flex flex-row items-stretch'>
-                            <div className='flex flex-col  '>
+                        <div className='flex flex-row items-stretch '>
+                            <div className='flex flex-col my-5  '>
                         <h1>{project.title}</h1>
                         
                         <a href ={project.url} target = "_blank" rel="noreferrer">
                         <div
-                        className=' flex  flex-row h-60 w-60 m-1  bg-cover bg-center shadow-2xl shadow-emerald-950   '
+                        className=' flex   flex-row  h-60 w-60 m-1  bg-cover bg-center shadow-2xl shadow-emerald-950   '
                         
                             style={{
                                 backgroundImage: `url(${project.image}) `,
@@ -90,12 +90,12 @@ function Work() {
                                 </div>
                                 </a>
                         </div>
-                                <div className='m-4 pl-5 items-center  '>
+                                <div className='flex m-5 pl-5  w-80  items-center   border-indigo-600  '>
                             
                             <p>{project.discreption}</p>
                             </div>
                             <div
-                                  className=" m-4 flex  items-center  "
+                                  className=" m-4 flex w-80 grid justify-items-center  items-center   border-indigo-600   "
                                 >
                                     <a href = {project.github} target="_blank" rel="noreferrer"><i 
                                         className={project.githubIcon} 
