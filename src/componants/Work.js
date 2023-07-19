@@ -31,7 +31,7 @@ function Work() {
             title: "Password Generator",
             image: "https://github.com/melhelow/03-hw/raw/main/assets/screenshot/deployed%202023-02-11%20164042.png",
             discreption: "an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes",
-            url: "https://melhelow.github.io/03-hw/",
+            url: "https://melhelow.github.io/password-generator/",
             github:"https://github.com/melhelow/password-generator",
             githubIcon:"fa-brands fa-github"
         },
