@@ -75,7 +75,7 @@ function Work() {
                 myProjects.map(project => {
                     return (
                         <div className='flex flex-row items-stretch '>
-                            <div className='flex flex-col my-5  '>
+                            <div className='flex flex-col my-5 italic font-bold  '>
                         <h1>{project.title}</h1>
                         
                         <a href ={project.url} target = "_blank" rel="noreferrer">
