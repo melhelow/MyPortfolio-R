@@ -7,7 +7,7 @@ function Work() {
             title: "CalPal",
             image: "https://github.com/Bit-Bandits/client/raw/main/src/assets/logo.png",
             discreption: "CalPal is a calorie counting web application that allows a user to search for foods via the Edamam API and save the calories of their logged foods to their account,Users can see their logged calories for the week rendered as individual days listed in an easy to digest bar graph in their dashboard. The idea is simple, fast, and easy.",
-            url: "https://calpal-app.herokuapp.com/"
+            url: "https://calpal-d266c388df3c.herokuapp.com/"
         },
         {
             title: "Plant Pedia",
