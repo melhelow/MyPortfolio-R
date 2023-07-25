@@ -1,5 +1,5 @@
 import React from 'react';
-import myResume from '../pdf/resume-software-engineer.pdf'
+import myResume from '../pdf/software-engineer.pdf'
 
 function Resume() {
  
