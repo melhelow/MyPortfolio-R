@@ -25,7 +25,7 @@ in this 20th assignment  i started my own code
 https://github.com/melhelow/MyPortofoilio-R
 
 ## deployed
-https://melhelow.github.io/MyPortofoilio-R/
+https://melhelow.github.io/MyPortfolio-R/
 
 
 ## credits
