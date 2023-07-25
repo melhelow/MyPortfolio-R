@@ -22,7 +22,7 @@ in this 20th assignment  i started my own code
 ![Getting Started](./src/images/react%204.png)
 
 ## github 
-https://github.com/melhelow/MyPortofoilio-R
+https://github.com/melhelow/MyPortfolio-R
 
 ## deployed
 https://melhelow.github.io/MyPortfolio-R/
