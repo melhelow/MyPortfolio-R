@@ -1,5 +1,5 @@
 import React from 'react';
-import myResume from '../pdf/Mohamed_Elhelw_Resume.pdf'
+import myResume from '../pdf/Mohamed_ElhelwResume.pdf'
 
 function Resume() {
  
@@ -10,16 +10,10 @@ function Resume() {
                     <h1>Resume</h1>
                 </div>
                     <div className="m-5 w-full  ">
-                   
-                                        
-                                           
-                 <iframe src= {myResume} width="120%" height="600"/>
-                                            
-                                     
+   
+                 <iframe src={myResume} width="120%" height="600" title="My Resume Document"/>
+                 
 
-                                        
-                    
-                
             </div>
         </div>
         );
