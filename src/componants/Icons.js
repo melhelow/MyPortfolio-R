@@ -38,7 +38,7 @@ function Icons() {
                                 <div
                                   className=" flex flex-row  h-25 w-25 m-5  bg-cover bg-center  justify-end items-end "
                                 >
-                                    <a href = {icons.url} target="_blank"><i 
+                                    <a href = {icons.url} target="_blank" rel="noreferrer"><i 
                                         className={icons.icon} 
                                         style={{
                                             fontSize: "15px"

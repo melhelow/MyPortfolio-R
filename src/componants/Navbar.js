@@ -1,6 +1,4 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure } from '@headlessui/react'
 
 
 
@@ -41,10 +39,10 @@ export default function Example(props) {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                            props.currentPage == item.name ? 'bg-lime-300 bg-blue-400' : 'bg-blue-400 hover:bg-gray-700 hover:text-white',
+                            props.currentPage === item.name ? 'bg-lime-300 bg-blue-400' : 'bg-blue-400 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
-                        aria-current={props.currentPage == item.name ? 'page' : undefined}
+                        aria-current={props.currentPage === item.name ? 'page' : undefined}
                         onClick={() => {
                             props.setCurrentPage(item.name)
                         }}
