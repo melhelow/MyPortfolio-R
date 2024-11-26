@@ -10,12 +10,7 @@ function About() {
             
             
             <div className="m-5  flex flex-row decoration-double text-justify  text-lg text-center w-1/2 pt-2 ">
-                <p>Experienced Full Stack Web Developer, passionate about injecting creativity into code. Proficient in
-MERN stack technologies, including JavaScript, Express, Node, HTML, and CSS. My expertise lies in
-crafting distinctive user experiences and creatively solving challenges in both front-end and back-end
-development. Adept in client communication, both written and verbal, with a knack for nurturing
-long-term relationships. Experienced in deploying projects to Heroku and proficient in GitHub for version
-control.</p>
+                <p>Experienced Full Stack Web Developer with expertise in MERN stack technologies, including JavaScript, Node.js, Express, React.js, and MongoDB. Proficient in creating dynamic user experiences and addressing complex challenges in both front-end and back-end development. Skilled in deploying projects to Heroku, leveraging GitHub for version control, and effectively communicating with clients to build and maintain strong relationships. Additionally experienced in Ruby on Rails, MySQL, and modern frameworks like Bootstrap and Tailwind, showcasing a versatile and adaptive skill set.</p>
                     
                      
             </div>
