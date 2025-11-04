@@ -3,6 +3,14 @@ import React from 'react';
 function Work() {
 
     const myProjects = [
+           {
+            title: "RigRadar",
+            image: "https://github.com/Bit-Bandits/client/raw/main/src/assets/logo.png",
+            discreption: "RigRadar helps long-haul drivers pre-plan routes by discovering Truck Stops, Rest Areas, and Weigh Stations within a configurable buffer around the pickup→drop-off corridor.",
+            url: "https://rig-radar.onrender.com//",
+            github:"https://github.com/melhelow/RigRadar",
+            githubIcon:"fa-brands fa-github"
+        },
         {
             title: "CalPal",
             image: "https://github.com/Bit-Bandits/client/raw/main/src/assets/logo.png",
