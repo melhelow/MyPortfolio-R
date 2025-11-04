@@ -5,7 +5,7 @@ function Work() {
     const myProjects = [
            {
             title: "RigRadar",
-            image: "https://github.com/Bit-Bandits/client/raw/main/src/assets/logo.png",
+            image: "https://rig-radar.onrender.com/assets/hero_truck-a15cb811.jpg",
             discreption: "RigRadar helps long-haul drivers pre-plan routes by discovering Truck Stops, Rest Areas, and Weigh Stations within a configurable buffer around the pickup→drop-off corridor.",
             url: "https://rig-radar.onrender.com//",
             github:"https://github.com/melhelow/RigRadar",
