@@ -10,7 +10,7 @@ function About() {
             
             
             <div className="m-5  flex flex-row decoration-double text-justify  text-lg text-center w-1/2 pt-2 ">
-                <p>Experienced Full Stack Web Developer with expertise in MERN stack technologies, including JavaScript, Node.js, Express, React.js, and MongoDB. Proficient in creating dynamic user experiences and addressing complex challenges in both front-end and back-end development. Skilled in deploying projects to Heroku, leveraging GitHub for version control, and effectively communicating with clients to build and maintain strong relationships. Additionally experienced in Ruby on Rails, MySQL, and modern frameworks like Bootstrap and Tailwind, showcasing a versatile and adaptive skill set.</p>
+                <p>Full-stack software developer with hands-on experience building production-ready applications using JavaScript, React.js, Node.js, and SQL databases. Completed Northwestern University coding bootcamp and Discovery Partners Institute’s Talent Accelerator Program. Experienced in the full Software Development Life Cycle (SDLC), Object-Oriented Programming (OOP), and Git version control. Career-changer bringing 12+ years of business operations leadership with proven troubleshooting, cross-functional team management, and regulatory compliance experience. Eager to apply strong JavaScript foundation and systematic problem-solving..</p>
                     
                      
             </div>
