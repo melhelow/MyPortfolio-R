@@ -27,14 +27,7 @@ function Work() {
             github:"https://github.com/nextCentury-coders/Plant-pedia",
             githubIcon:"fa-brands fa-github"
         },
-        {
-            title: "Kidding Kittys",
-            image: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64936663/1/?bust=1686450238&width=300",
-            discreption: "Kidding Kittys is a web application that allows users to search for cats and get information about them. The user can also save cats to their favorites list and view them later. The user can also view the weather in their area and get a list of cats that are best suited for the current weather conditions.",
-            url: "https://chi-town-coders.github.io/kidding-kitties/",
-            github:"https://github.com/Chi-Town-Coders/kidding-kitties",
-            githubIcon:"fa-brands fa-github"
-        },
+     
         {
             title: "Password Generator",
             image: "https://github.com/melhelow/03-hw/raw/main/assets/screenshot/deployed%202023-02-11%20164042.png",
@@ -62,7 +55,7 @@ function Work() {
         {
             title: "weather-dashboard",
             image: "https://github.com/melhelow/weather-dashboard/raw/main/develop/deployed-weather%20dashboard.png",
-            discreption: "Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.",
+            discreption: " a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.",
             url: "https://melhelow.github.io/weather-dashboard/",
             github:"https://github.com/melhelow/weather-dashboard",
             githubIcon:"fa-brands fa-github"
