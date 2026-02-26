@@ -68,6 +68,18 @@ function Form() {
         {submitted && email.length === 0 && (
           <p className="text-red-500 text-sm">Email is required</p>
         )}
+             {/* Phone*/}
+           <input
+          className="border-2 border-solid border-black"
+          value={Phone}
+          name="from_phone"
+          onChange={(e) => setEmail(e.target.value)}
+          type="phone"
+          placeholder="phone"
+        />
+        {submitted && phone.length === 0 && (
+          <p className="text-red-500 text-sm">Phone is required</p>
+        )} 
 
         {/* Message */}
         <textarea
