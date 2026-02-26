@@ -1,65 +1,103 @@
-import React, { useState } from 'react';
-
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 function Form() {
-  // Here we set two state variables for firstName and lastName using `useState`
+  const form = useRef();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-
-  const handleInputChange = (e) => {
-    // Getting the value and name of the input which triggered the change
-    const { name, value } = e.target;
-
-    // Ternary statement that will call either setFirstName or setLastName based on what field the user is typing in
-    return name === 'name' ? setName(value) : setEmail(value);
-  };
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState(''); // '', 'sending', 'success', 'error'
+  const [submitted, setSubmitted] = useState(false);
 
   const handleFormSubmit = (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+    setSubmitted(true);
 
-    // Alert the user their first and last name, clear the inputs
-    alert(`${name} ${email}`);
-    setName('');
-    setEmail('');
+    if (!name || !email || !message) return;
+
+    setStatus('sending');
+
+    emailjs.sendForm(
+      'service_9e29r6b',
+      'template_m153y0i',
+      form.current,
+      'tazHbsaSG9euaXE3h'
+    )
+    .then(() => {
+      setStatus('success');
+      setName('');
+      setEmail('');
+      setMessage('');
+      setSubmitted(false);
+    })
+    .catch(() => {
+      setStatus('error');
+    });
   };
-  
+
   return (
     <div>
-      <p>
-        {name} {email}
-      </p>
-      <form className="form flex flex-col grid justify-items-stretch items-end ">
-        <input 
-        className=' border-2 border-solid border-black  '
+      <form
+        ref={form}
+        className="form flex flex-col grid justify-items-stretch items-end"
+        onSubmit={handleFormSubmit}
+        noValidate
+      >
+        {/* Name */}
+        <input
+          className="border-2 border-solid border-black"
           value={name}
-          name="name"
-          onChange={handleInputChange}
+          name="from_name"
+          onChange={(e) => setName(e.target.value)}
           type="text"
           placeholder="name"
-          required
         />
-        {
-            name.length <= 0 ? <p>name is required</p> : null
-        }
-        
+        {submitted && name.length === 0 && (
+          <p className="text-red-500 text-sm">Name is required</p>
+        )}
+
+        {/* Email */}
         <input
-        className=' border-2 border-solid border-black'
+          className="border-2 border-solid border-black"
           value={email}
-          name="email"
-          onChange={handleInputChange}
-          type="text"
+          name="from_email"
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
           placeholder="email"
-         required
         />
-         {
-            email.length <= 0 ? <p>email is required</p> : null
-        }
-        
-        <textarea className=' border-2 border-solid border-black'/>
-        <button type="button" onClick={handleFormSubmit} className=' border-2 border-solid border-black'>
-          Submit
+        {submitted && email.length === 0 && (
+          <p className="text-red-500 text-sm">Email is required</p>
+        )}
+
+        {/* Message */}
+        <textarea
+          className="border-2 border-solid border-black"
+          value={message}
+          name="message"
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="your message"
+          rows={4}
+        />
+        {submitted && message.length === 0 && (
+          <p className="text-red-500 text-sm">Message is required</p>
+        )}
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="border-2 border-solid border-black"
+          disabled={status === 'sending'}
+        >
+          {status === 'sending' ? 'Sending...' : 'Submit'}
         </button>
+
+        {/* Feedback messages */}
+        {status === 'success' && (
+          <p className="text-green-600 mt-2">Message sent successfully! ✅</p>
+        )}
+        {status === 'error' && (
+          <p className="text-red-600 mt-2">Something went wrong. Please try again. ❌</p>
+        )}
       </form>
     </div>
   );
