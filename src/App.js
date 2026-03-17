@@ -10,36 +10,18 @@ function App() {
   const [currentPage, setCurrentPage] = useState("About");
 
   function render() {
-    if (currentPage === "About") {
-      return <About />;
-    }
-    if (currentPage === "Work") {
-      return <Work />;
-    }
-    if (currentPage === "Contact") {
-      return <Contact />;
-    }
-    if (currentPage === "Resume") {
-      return <Resume />;
-    }
-
+    if (currentPage === "About")   return <About setCurrentPage={setCurrentPage} />;
+    if (currentPage === "Work")    return <Work />;
+    if (currentPage === "Contact") return <Contact />;
+    if (currentPage === "Resume")  return <Resume />;
   }
 
   return (
-    <>
-    <div className="App ">
-      <Header 
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />  
+    <div style={{ minHeight: '100vh', background: '#0a0a0a', color: '#fff' }}>
+      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main>{render()}</main>
-      
+      <Footer />
     </div>
-    <div>
-    <Footer/>
-    </div>
-    </>
-    
   );
 }
 

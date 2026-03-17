@@ -1,90 +1,199 @@
-import { Disclosure } from '@headlessui/react'
+import React, { useState, useEffect } from 'react';
 
+const NAV_ITEMS = ['About', 'Work', 'Resume', 'Contact'];
 
+export default function Navbar({ currentPage, setCurrentPage }) {
+  const [scrolled, setScrolled]   = useState(false);
+  const [menuOpen, setMenuOpen]   = useState(false);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
+  const navWrap = {
+    position: 'fixed',
+    top: '20px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    zIndex: 9999,
+    width: 'calc(100% - 40px)',
+    maxWidth: '860px',
+  };
 
-const navigation = [
-  { name: 'About', href: '#'},
-  { name: 'Work', href: '#'},
-  { name: 'Resume', href: '#' },
-  { name: 'Contact', href: '#' },
-  
-  
+  const pill = {
+    background: scrolled
+      ? 'rgba(8, 8, 8, 0.96)'
+      : 'rgba(10, 10, 10, 0.75)',
+    backdropFilter: 'blur(24px)',
+    WebkitBackdropFilter: 'blur(24px)',
+    border: '1px solid rgba(255,255,255,0.09)',
+    borderRadius: '999px',
+    padding: '10px 16px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    boxShadow: scrolled
+      ? '0 8px 40px rgba(0,0,0,0.6)'
+      : '0 4px 24px rgba(0,0,0,0.4)',
+    transition: 'all 0.3s ease',
+  };
 
-
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function Example(props) {
   return (
-    <Disclosure as="nav" className="bg-cyan-600  ">
-      {({ open }) => (
-        <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  ">
-            <div className="relative flex h-32 items-center justify-between">
-            <div className=" text-3xl text-slate-100 italic font-bold">
-                    <h3>Mohamed Elhelw</h3>
-                  </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center  ">
-         
-                <div className="sm:ml-6 sm:block  ">
-                  
-                  <div className="flex space-x-20 ">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                            props.currentPage === item.name ? 'bg-lime-300 bg-blue-400' : 'bg-blue-400 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={props.currentPage === item.name ? 'page' : undefined}
-                        onClick={() => {
-                            props.setCurrentPage(item.name)
-                        }}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-      
-              {/* <img
-                        className="h-40 w-40 rounded-full"
-                        src={avatar}
-                        alt=""
-                      />
-                */}
-              </div>
-            </div>
-          </div>
+    <div style={navWrap}>
+      <div style={pill}>
+        {/* ── Logo ── */}
+        <button
+          onClick={() => setCurrentPage('About')}
+          style={{
+            background: 'linear-gradient(135deg, #22d3ee, #a78bfa)',
+            border: 'none',
+            borderRadius: '50%',
+            width: '38px',
+            height: '38px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontWeight: '800',
+            fontSize: '13px',
+            color: '#000',
+            cursor: 'pointer',
+            flexShrink: 0,
+            letterSpacing: '-0.5px',
+          }}
+        >
+          ME
+        </button>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
-        </>
+        {/* ── Desktop links ── */}
+        <div
+          style={{ display: 'flex', gap: '2px', alignItems: 'center' }}
+          className="hidden sm:flex"
+        >
+          {NAV_ITEMS.map((item) => {
+            const active = currentPage === item;
+            return (
+              <button
+                key={item}
+                onClick={() => setCurrentPage(item)}
+                style={{
+                  background: active ? 'rgba(34,211,238,0.12)' : 'transparent',
+                  border: active
+                    ? '1px solid rgba(34,211,238,0.35)'
+                    : '1px solid transparent',
+                  borderRadius: '999px',
+                  padding: '7px 22px',
+                  fontSize: '14px',
+                  fontWeight: active ? '600' : '400',
+                  color: active ? '#22d3ee' : 'rgba(255,255,255,0.65)',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  letterSpacing: '0.01em',
+                }}
+                onMouseEnter={(e) => {
+                  if (!active) {
+                    e.currentTarget.style.color = '#fff';
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!active) {
+                    e.currentTarget.style.color = 'rgba(255,255,255,0.65)';
+                    e.currentTarget.style.background = 'transparent';
+                  }
+                }}
+              >
+                {item}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* ── CTA button ── */}
+        <button
+          onClick={() => setCurrentPage('Contact')}
+          style={{
+            background: 'linear-gradient(135deg, #22d3ee, #a78bfa)',
+            border: 'none',
+            borderRadius: '999px',
+            padding: '8px 20px',
+            fontSize: '13px',
+            fontWeight: '600',
+            color: '#000',
+            cursor: 'pointer',
+            letterSpacing: '0.02em',
+            transition: 'opacity 0.2s ease',
+          }}
+          className="hidden sm:block"
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+        >
+          Hire Me
+        </button>
+
+        {/* ── Hamburger (mobile) ── */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="sm:hidden"
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#fff',
+            cursor: 'pointer',
+            fontSize: '22px',
+            lineHeight: 1,
+            padding: '4px 8px',
+          }}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
+      </div>
+
+      {/* ── Mobile dropdown ── */}
+      {menuOpen && (
+        <div
+          className="sm:hidden"
+          style={{
+            marginTop: '8px',
+            background: 'rgba(10,10,10,0.97)',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
+            border: '1px solid rgba(255,255,255,0.09)',
+            borderRadius: '16px',
+            padding: '10px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '4px',
+          }}
+        >
+          {NAV_ITEMS.map((item) => {
+            const active = currentPage === item;
+            return (
+              <button
+                key={item}
+                onClick={() => { setCurrentPage(item); setMenuOpen(false); }}
+                style={{
+                  background: active ? 'rgba(34,211,238,0.12)' : 'transparent',
+                  border: 'none',
+                  borderRadius: '10px',
+                  padding: '12px 18px',
+                  fontSize: '15px',
+                  fontWeight: active ? '600' : '400',
+                  color: active ? '#22d3ee' : 'rgba(255,255,255,0.7)',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  width: '100%',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                {item}
+              </button>
+            );
+          })}
+        </div>
       )}
-    </Disclosure>
-  )
+    </div>
+  );
 }
