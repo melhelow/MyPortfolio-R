@@ -23,7 +23,7 @@ const myProjects = [
     title: 'CalPal',
     image: 'https://github.com/Bit-Bandits/client/raw/main/src/assets/logo.png',
     description: 'A calorie counting web app that lets users search foods via the Edamam API and track weekly intake with a beautiful bar graph dashboard.',
-    url: 'https://calpal-d266c388df3c.herokuapp.com/',
+    url: 'https://calpal-client.onrender.com/',
     github: 'https://github.com/orgs/Bit-Bandits/repositories',
     tags: ['React', 'GraphQL', 'MongoDB'],
     featured: true,
