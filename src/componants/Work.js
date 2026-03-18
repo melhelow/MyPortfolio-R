@@ -32,7 +32,7 @@ const myProjects = [
     title: 'Plant Pedia',
     image: 'https://avatars.githubusercontent.com/u/132026629?s=200&v=4',
     description: 'Search for plants, save favorites, and view weather-matched plant recommendations for your local area.',
-    url: 'https://plantpedia.herokuapp.com/',
+    url: 'https://plant-pedia.onrender.com/',
     github: 'https://github.com/nextCentury-coders/Plant-pedia',
     tags: ['Handlebars', 'API Integration', 'Bootstrap'],
     featured: true,
