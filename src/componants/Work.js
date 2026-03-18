@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 
 const myProjects = [
   {
+    title: 'Receipt Processor',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&auto=format&fit=crop&q=80',
+    description: 'Full-stack receipt management app with GraphQL API, Apollo Client, and a dark-mode React UI. Submit receipts, auto-calculate reward points across 6 rules, and view a detailed points breakdown per receipt.',
+    url: 'https://receipt-processor-9ga1.onrender.com/',
+    github: 'https://github.com/melhelow/receipt-processor',
+    tags: ['React', 'GraphQL', 'Apollo', 'MongoDB', 'Node.js'],
+    featured: true,
+  },
+  {
     title: 'RigRadar',
     image: 'https://rig-radar.onrender.com/assets/hero_truck-a15cb811.jpg',
     description: 'Helps long-haul drivers pre-plan routes by discovering Truck Stops, Rest Areas, and Weigh Stations within a configurable buffer around the pickup→drop-off corridor.',
@@ -27,6 +36,15 @@ const myProjects = [
     github: 'https://github.com/nextCentury-coders/Plant-pedia',
     tags: ['Handlebars', 'API Integration', 'Bootstrap'],
     featured: true,
+  },
+  {
+    title: 'Book Search Engine',
+    image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&auto=format&fit=crop&q=80',
+    description: 'Search millions of books via the Google Books API, create an account, and save your favorites to a personal reading list powered by GraphQL and MongoDB.',
+    url: 'https://book-search-engine-vg9c.onrender.com/',
+    github: 'https://github.com/melhelow/book-search-engine',
+    tags: ['React', 'GraphQL', 'Apollo', 'MongoDB', 'Node.js'],
+    featured: false,
   },
   {
     title: 'Password Generator',
