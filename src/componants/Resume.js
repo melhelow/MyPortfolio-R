@@ -50,9 +50,9 @@ export default function Resume() {
           </a>
         </div>
 
-        {/* PDF Viewer */}
+        {/* PDF Viewer — desktop only */}
         <div
-          className="animate-fade-in-up glass"
+          className="animate-fade-in-up glass resume-iframe-wrapper"
           style={{
             borderRadius: '20px',
             overflow: 'hidden',
@@ -62,7 +62,6 @@ export default function Resume() {
           <iframe
             src={myResume}
             title="Mohamed Elhelw Resume"
-            className="resume-iframe"
             style={{
               width: '100%',
               height: '800px',
@@ -70,6 +69,51 @@ export default function Resume() {
               display: 'block',
             }}
           />
+        </div>
+
+        {/* Mobile fallback */}
+        <div
+          className="animate-fade-in-up glass resume-mobile-cta"
+          style={{
+            borderRadius: '20px',
+            padding: '48px 24px',
+            border: '1px solid rgba(255,255,255,0.08)',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '20px',
+          }}
+        >
+          <div style={{ fontSize: '48px' }}>📄</div>
+          <div>
+            <p style={{ fontSize: '20px', fontWeight: '700', margin: '0 0 8px 0' }}>
+              Mohamed Elhelw — Resume
+            </p>
+            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
+              PDF preview is not available on mobile. Download to view.
+            </p>
+          </div>
+          <a
+            href={myResume}
+            download
+            style={{
+              background: 'linear-gradient(135deg, #22d3ee, #a78bfa)',
+              border: 'none',
+              borderRadius: '999px',
+              padding: '14px 36px',
+              fontSize: '15px',
+              fontWeight: '700',
+              color: '#000',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+          >
+            <i className="fa-solid fa-download" />
+            Download PDF
+          </a>
         </div>
 
       </div>

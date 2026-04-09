@@ -68,7 +68,7 @@ export default function Navbar({ currentPage, setCurrentPage }) {
 
         {/* ── Desktop links ── */}
         <div
-          style={{ display: 'flex', gap: '2px', alignItems: 'center' }}
+          style={{ gap: '2px', alignItems: 'center' }}
           className="hidden sm:flex"
         >
           {NAV_ITEMS.map((item) => {

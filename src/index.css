@@ -93,6 +93,9 @@ code {
   margin: 0 auto;
 }
 
+/* Hide mobile resume card on desktop */
+.resume-mobile-cta { display: none; }
+
 /* ── Mobile responsive ── */
 @media (max-width: 640px) {
   /* About hero: stack columns, show avatar above text */
@@ -131,9 +134,12 @@ code {
     grid-template-columns: 1fr !important;
   }
 
-  /* Resume: shorter iframe */
-  .resume-iframe {
-    height: 420px !important;
+  /* Resume: hide iframe, show download card instead */
+  .resume-iframe-wrapper {
+    display: none !important;
+  }
+  .resume-mobile-cta {
+    display: flex !important;
   }
 
   /* CTA buttons: full width on very small screens */
