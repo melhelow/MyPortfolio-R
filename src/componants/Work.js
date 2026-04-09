@@ -57,7 +57,7 @@ const myProjects = [
   },
   {
     title: 'Time Quiz',
-    image: 'https://github.com/melhelow/time-quiz/raw/main/assets/Screenshot%202023-02-21%20223647.png',
+    image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&auto=format&fit=crop&q=80',
     description: 'Timed coding quiz with multiple-choice questions and a live countdown timer. Polished responsive UI.',
     url: 'https://melhelow.github.io/time-quiz/',
     github: 'https://github.com/melhelow/time-quiz',
@@ -75,7 +75,7 @@ const myProjects = [
   },
   {
     title: 'Weather Dashboard',
-    image: 'https://github.com/melhelow/weather-dashboard/raw/main/develop/deployed-weather%20dashboard.png',
+    image: 'https://images.unsplash.com/photo-1504608524841-42584120d693?w=600&auto=format&fit=crop&q=80',
     description: 'Search any city and get current conditions plus a 5-day forecast, powered by OpenWeather API.',
     url: 'https://melhelow.github.io/weather-dashboard/',
     github: 'https://github.com/melhelow/weather-dashboard',
