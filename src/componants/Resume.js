@@ -62,6 +62,7 @@ export default function Resume() {
           <iframe
             src={myResume}
             title="Mohamed Elhelw Resume"
+            className="resume-iframe"
             style={{
               width: '100%',
               height: '800px',

@@ -5,8 +5,8 @@ const contactInfo = [
   {
     icon: 'fa-solid fa-at',
     label: 'Email',
-    value: 'melhelow@hotmail.com',
-    href: 'mailto:melhelow@hotmail.com',
+    value: 'melhelw558@gmail.com',
+    href: 'mailto:melhelw558@gmail.com',
   },
   {
     icon: 'fa-sharp fa-solid fa-phone',
@@ -58,6 +58,7 @@ export default function Contact() {
 
         {/* Two-column layout */}
         <div
+          className="contact-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.4fr)',

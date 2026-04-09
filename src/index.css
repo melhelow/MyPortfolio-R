@@ -92,3 +92,23 @@ code {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+/* ── Mobile responsive ── */
+@media (max-width: 640px) {
+  .flex-col-mobile {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .form-two-col {
+    grid-template-columns: 1fr !important;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .resume-iframe {
+    height: 480px !important;
+  }
+}
