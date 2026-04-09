@@ -16,10 +16,10 @@ in this 20th assignment  i started my own code
 - REACT,Tailwind
 
 
-![Getting Started](./src/images/react%201.png)
-![Getting Started](./src/images/react%202.png)
-![Getting Started](./src/images/react%203.png)
-![Getting Started](./src/images/react%204.png)
+![About](./src/images/preview-about.png)
+![Work](./src/images/preview-work.png)
+![Resume](./src/images/preview-resume.png)
+![Contact](./src/images/preview-contact.png)
 
 ## github 
 https://github.com/melhelow/MyPortfolio-R
