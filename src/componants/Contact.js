@@ -135,7 +135,7 @@ export default function Contact() {
 
           {/* RIGHT: form */}
           <div
-            className="animate-fade-in-up glass delay-200"
+            className="animate-fade-in-up glass delay-200 contact-form-card"
             style={{ borderRadius: '20px', padding: '36px' }}
           >
             <Form />

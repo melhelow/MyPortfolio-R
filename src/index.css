@@ -95,20 +95,55 @@ code {
 
 /* ── Mobile responsive ── */
 @media (max-width: 640px) {
+  /* About hero: stack columns, show avatar above text */
   .flex-col-mobile {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 28px !important;
   }
-  .contact-grid {
-    grid-template-columns: 1fr !important;
+  .avatar-mobile-first {
+    order: -1;
+    justify-content: center !important;
   }
-  .form-two-col {
-    grid-template-columns: 1fr !important;
-  }
+
+  /* About stats: single column */
   .stats-grid {
     grid-template-columns: 1fr !important;
   }
+
+  /* Work: prevent grid overflow on very narrow screens */
+  .work-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Contact: stack info + form */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Contact form: reduce inner padding on small screens */
+  .contact-form-card {
+    padding: 20px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Form: stack name/email fields */
+  .form-two-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Resume: shorter iframe */
   .resume-iframe {
-    height: 480px !important;
+    height: 420px !important;
+  }
+
+  /* CTA buttons: full width on very small screens */
+  .cta-buttons {
+    flex-direction: column !important;
+  }
+  .cta-buttons a,
+  .cta-buttons button {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
   }
 }

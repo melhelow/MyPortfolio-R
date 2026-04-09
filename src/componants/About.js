@@ -138,7 +138,7 @@ export default function About({ setCurrentPage }) {
             </div>
 
             {/* CTAs */}
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+            <div className="cta-buttons" style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
               <button
                 onClick={() => setCurrentPage('Work')}
                 style={{
@@ -186,7 +186,7 @@ export default function About({ setCurrentPage }) {
 
           {/* RIGHT: avatar */}
           <div
-            className="animate-float"
+            className="animate-float avatar-mobile-first"
             style={{ display: 'flex', justifyContent: 'center' }}
           >
             <div
