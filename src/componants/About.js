@@ -160,7 +160,7 @@ export default function About({ setCurrentPage }) {
               </button>
 
               <a
-                href="/src/pdf/Mohamed_Elhelw.pdf"
+                href="/MyPortfolio-R/Mohamed_Elhelw.pdf"
                 download
                 style={{
                   background: 'transparent',
@@ -179,7 +179,7 @@ export default function About({ setCurrentPage }) {
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#22d3ee'; e.currentTarget.style.color = '#22d3ee'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)'; e.currentTarget.style.color = 'rgba(255,255,255,0.8)'; }}
               >
-                Download CV
+                Download Resume
               </a>
             </div>
           </div>
@@ -237,7 +237,7 @@ export default function About({ setCurrentPage }) {
 
         {/* ── Stats bar ── */}
         <div
-          className="animate-fade-in delay-500"
+          className="animate-fade-in delay-500 stats-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',

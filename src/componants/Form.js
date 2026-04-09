@@ -69,7 +69,7 @@ export default function Form() {
   return (
     <form ref={form} onSubmit={handleSubmit} noValidate style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+      <div className="form-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
         <Field label="Full Name" error={submitted && !name ? 'Required' : ''}>
           <input
             style={inputStyle}
