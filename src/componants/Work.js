@@ -57,7 +57,7 @@ const myProjects = [
   },
   {
     title: 'Time Quiz',
-    image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=600&auto=format&fit=crop&q=80',
     description: 'Timed coding quiz with multiple-choice questions and a live countdown timer. Polished responsive UI.',
     url: 'https://melhelow.github.io/time-quiz/',
     github: 'https://github.com/melhelow/time-quiz',
@@ -66,7 +66,7 @@ const myProjects = [
   },
   {
     title: 'Work Day Scheduler',
-    image: 'https://github.com/melhelow/work-day-scheduler/raw/main/Develop/Screenshot%202023-02-25%20160852.png',
+    image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&auto=format&fit=crop&q=80',
     description: 'Calendar app that lets users save events for each hour of the day with color-coded time blocks.',
     url: 'https://melhelow.github.io/work-day-scheduler/',
     github: 'https://github.com/melhelow/work-day-scheduler',
@@ -75,7 +75,7 @@ const myProjects = [
   },
   {
     title: 'Weather Dashboard',
-    image: 'https://images.unsplash.com/photo-1504608524841-42584120d693?w=600&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&auto=format&fit=crop&q=80',
     description: 'Search any city and get current conditions plus a 5-day forecast, powered by OpenWeather API.',
     url: 'https://melhelow.github.io/weather-dashboard/',
     github: 'https://github.com/melhelow/weather-dashboard',
