@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 const inputStyle = {
@@ -29,7 +29,6 @@ function Field({ label, error, children }) {
 }
 
 export default function Form() {
-  const form = useRef();
   const [name,    setName]    = useState('');
   const [email,   setEmail]   = useState('');
   const [phone,   setPhone]   = useState('');
@@ -43,10 +42,10 @@ export default function Form() {
     if (!name || !email || !phone || !message) return;
 
     setStatus('sending');
-    emailjs.sendForm(
+    emailjs.send(
       'service_9e29r6b',
       'template_m153y0i',
-      form.current,
+      { from_name: name, from_email: email, from_phone: phone, message },
       'tazHbsaSG9euaXE3h'
     )
     .then(() => {
@@ -67,7 +66,7 @@ export default function Form() {
   };
 
   return (
-    <form ref={form} onSubmit={handleSubmit} noValidate style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+    <form onSubmit={handleSubmit} noValidate style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
 
       <div className="form-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
         <Field label="Full Name" error={submitted && !name ? 'Required' : ''}>
