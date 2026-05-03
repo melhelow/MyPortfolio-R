@@ -9,12 +9,6 @@ const contactInfo = [
     href: 'mailto:melhelw558@gmail.com',
   },
   {
-    icon: 'fa-sharp fa-solid fa-phone',
-    label: 'Phone',
-    value: '',
-    href: 'tel:',
-  },
-  {
     icon: 'fa-brands fa-github',
     label: 'GitHub',
     value: 'github.com/melhelow',
