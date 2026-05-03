@@ -9,12 +9,6 @@ const contactInfo = [
     href: 'mailto:melhelw558@gmail.com',
   },
   {
-    icon: 'fa-sharp fa-solid fa-phone',
-    label: 'Phone',
-    value: '+1-708-580-9783',
-    href: 'tel:+17085809783',
-  },
-  {
     icon: 'fa-brands fa-github',
     label: 'GitHub',
     value: 'github.com/melhelow',
