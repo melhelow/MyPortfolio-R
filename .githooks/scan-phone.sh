@@ -18,7 +18,7 @@
 
 set -u
 
-TEL_RE='tel:[[:space:]]*[+(0-9]'
+TEL_RE='tel:[[:space:]]*[+(0-9][^"`)<>[:space:]]*'
 SEP_RE='(\+?1[-. ])?\(?[0-9]{3}\)?[-. ][0-9]{3}[-. ][0-9]{4}'
 BARE_RE='(^|[^0-9A-Za-z_-])(\+?1)?[2-9][0-9]{2}[2-9][0-9]{6}([^0-9A-Za-z_-]|$)'
 
@@ -40,7 +40,11 @@ scan_text() { # $1 = label, text on stdin
       BARE) re=$BARE_RE ;;
     esac
     printf '%s\n' "$buf" | grep -oE "$re" 2>/dev/null | sort -u | while IFS= read -r m; do
-      is_placeholder "$m" || printf '  %s: [%s] %s\n' "$label" "$kind" "$m" >> "$HITS"
+      # A tel: link is never legitimate in this repo, whatever number follows
+      # it, so the placeholder exemption applies only to the digit patterns.
+      if [ "$kind" = TEL ] || ! is_placeholder "$m"; then
+        printf '  %s: [%s] %s\n' "$label" "$kind" "$m" >> "$HITS"
+      fi
     done
   done
 }
