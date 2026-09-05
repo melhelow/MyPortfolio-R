@@ -28,7 +28,8 @@ https://melhelow.github.io/MyPortfolio-R/
 
 ## contributing
 
-After cloning, turn on the repo's commit guard once:
+`npm install` turns on the repo's commit guard for you, via the `prepare`
+script. To enable it without installing:
 
 ```sh
 git config core.hooksPath .githooks
