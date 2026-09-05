@@ -1,0 +1,5 @@
+# Shell scripts must keep LF endings or they break on a Windows clone:
+# /bin/sh chokes on a CRLF shebang, which would silently disable the
+# pre-commit guard for anyone cloning with core.autocrlf=true.
+*.sh          text eol=lf
+.githooks/*   text eol=lf
