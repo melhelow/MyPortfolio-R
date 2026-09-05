@@ -1,0 +1,35 @@
+#!/bin/sh
+# Reject any commit whose staged content contains a phone number or tel: link.
+# Enable once per clone:  git config core.hooksPath .githooks
+set -u
+
+root=$(git rev-parse --show-toplevel) || exit 0
+scanner="$root/.githooks/scan-phone.sh"
+[ -f "$scanner" ] || exit 0
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+[ -n "$staged" ] || exit 0
+
+# Scan the STAGED blobs, not the worktree, so `git add -p` and dirty working
+# trees cannot smuggle content past the check.
+tmp=$(mktemp -d) || exit 0
+trap 'rm -rf "$tmp"' EXIT
+list="$tmp/.staged-list"
+: > "$list"
+
+printf '%s\n' "$staged" | while IFS= read -r f; do
+  [ -n "$f" ] || continue
+  mkdir -p "$tmp/$(dirname "$f")" 2>/dev/null || continue
+  git show ":$f" > "$tmp/$f" 2>/dev/null || continue
+  printf '%s\n' "$tmp/$f" >> "$list"
+done
+
+[ -s "$list" ] || exit 0
+
+if ! out=$(sh "$scanner" --stdin < "$list" 2>&1); then
+  # report the real repo paths, not the temp snapshot paths
+  printf '%s\n' "$out" | sed "s#$tmp/##g"
+  echo "Commit aborted by .githooks/pre-commit."
+  exit 1
+fi
+exit 0

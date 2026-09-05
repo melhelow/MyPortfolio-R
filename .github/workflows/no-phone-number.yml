@@ -1,0 +1,110 @@
+# Fails the build if a phone number or a tel: link reaches the source tree,
+# the git history, or the compiled site.
+#
+# The checks are shape-based, never value-based: the number this repo was
+# scrubbed of is not written down anywhere in this repo, so the guard cannot
+# re-leak what it guards.
+name: no-phone-number
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-build:
+    name: Source tree and compiled output
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install pdftotext
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+
+      - name: Scan every tracked file (text + PDF text layers)
+        run: sh .githooks/scan-phone.sh
+
+      - name: "Fail on any tel: link in src/"
+        # src/ must contain no tel: link of any shape. Verified zero at the time
+        # this guard was added, so any hit is a real regression.
+        run: |
+          if grep -rn 'tel:' src/; then
+            echo "::error::a tel: link appeared in src/"
+            exit 1
+          fi
+          echo "src/ has no tel: links"
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+        env:
+          CI: false        # CRA treats warnings as errors when CI=true
+
+      - name: Scan the compiled output
+        run: find build -type f | sh .githooks/scan-phone.sh --stdin
+
+      - name: "Fail on any tel: link in build/"
+        # React's own bundle contains the token `tel:!0` (its HTML input-type
+        # map). That single literal is the only permitted form.
+        run: |
+          hits=$(grep -rao 'tel:.\{0,20\}' build/ | grep -v 'tel:!0' || true)
+          if [ -n "$hits" ]; then
+            echo "$hits"
+            echo "::error::a tel: link appeared in the compiled output"
+            exit 1
+          fi
+          echo "build/ has no tel: links"
+
+  history:
+    name: Full git history (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # gitleaks needs the whole history
+
+      - name: Install gitleaks
+        run: |
+          curl -sSfL -o gitleaks.tar.gz \
+            https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          tar -xzf gitleaks.tar.gz gitleaks
+          sudo install gitleaks /usr/local/bin/gitleaks
+          gitleaks version
+
+      - name: Scan history
+        run: gitleaks detect --source . --config .gitleaks.toml --redact --no-banner --exit-code 1
+
+  images:
+    name: OCR of committed images (advisory)
+    runs-on: ubuntu-latest
+    # Advisory only: OCR is noisy, so this reports without blocking a merge.
+    # It exists because two committed screenshots once carried the number as
+    # pixels, where no text scan could see it.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install tesseract
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq tesseract-ocr
+
+      - name: OCR every tracked image and scan the text
+        run: |
+          # the loop runs in a pipeline subshell, so the flag has to be a file
+          flag=$(mktemp)
+          git ls-files -z -- '*.png' '*.jpg' '*.jpeg' '*.webp'           | while IFS= read -r -d '' img; do
+              txt=$(tesseract "$img" - 2>/dev/null || true)
+              hit=$(printf '%s' "$txt"                 | grep -oE '(\+?1[-. ])?\(?[0-9]{3}\)?[-. ][0-9]{3}[-. ][0-9]{4}' || true)
+              if [ -n "$hit" ]; then
+                echo "::warning file=$img::possible phone number visible in image: $hit"
+                echo hit >> "$flag"
+              fi
+            done
+          [ -s "$flag" ] && exit 1
+          echo "no phone-shaped text found in committed images"
