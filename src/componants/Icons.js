@@ -4,7 +4,6 @@ const socials = [
   { icon: 'fa-brands fa-github',      href: 'https://github.com/melhelow',                                     label: 'GitHub' },
   { icon: 'fa-brands fa-linkedin-in', href: 'https://www.linkedin.com/in/mohamed-elhelw-76a888271/',           label: 'LinkedIn' },
   { icon: 'fa-solid fa-at',           href: 'mailto:melhelow@hotmail.com',                                     label: 'Email' },
-  { icon: 'fa-sharp fa-solid fa-phone', href: 'tel:',                                              label: 'Phone' },
 ];
 
 export default function Icons() {
